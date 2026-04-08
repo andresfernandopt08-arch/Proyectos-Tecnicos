@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mantenimiento e instalación de ascensores - Proyectos Técnicos 2008">
   <title>Ascensores Proyectos Técnicos | Enlace en Bio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,13 @@
       --deep-navy: #001529;
     }
     
-    body { background-color: var(--deep-navy); margin: 0; overflow: hidden; font-family: 'Sora', sans-serif; }
+    body { 
+      background-color: var(--deep-navy); 
+      margin: 0; 
+      overflow: hidden; 
+      font-family: 'Sora', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
     .dynamic-bg {
       position: fixed;
@@ -27,6 +34,7 @@
       background-size: 200% 200%;
       animation: gradientFlow 12s ease-in-out infinite alternate;
       z-index: -1;
+      will-change: background-position;
     }
 
     @keyframes gradientFlow {
@@ -36,12 +44,13 @@
 
     .light-particle {
       position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; opacity: 0.3;
-      will-change: transform; animation: floatUp linear infinite;
+      animation: floatUp linear infinite;
+      will-change: transform;
     }
 
     @keyframes floatUp {
-      0% { transform: translate3d(0, 105vh, 0); opacity: 0; }
-      100% { transform: translate3d(0, -10vh, 0); opacity: 0; }
+      0% { transform: translateY(105vh); opacity: 0; }
+      100% { transform: translateY(-10vh); opacity: 0; }
     }
 
     .glass-card {
@@ -55,7 +64,7 @@
       background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      text-decoration: none;
+      will-change: transform, box-shadow;
     }
 
     .link-button:hover {
@@ -68,6 +77,7 @@
       outline: 4px solid white;
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       animation: softFloat 4s ease-in-out infinite;
+      backface-visibility: hidden;
     }
 
     @keyframes softFloat {
@@ -83,6 +93,9 @@
       0% { transform: scale(1); opacity: 0.8; }
       100% { transform: scale(1.6); opacity: 0; }
     }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 
@@ -98,28 +111,46 @@
     <div class="max-w-md mx-auto flex flex-col items-center">
       
       <div class="logo-container w-36 h-36 rounded-full mb-8 overflow-hidden bg-white">
-        <img src="https://i.ibb.co/20QqJKX2/logo.jpg" alt="Logo Proyectos Técnicos" class="w-full h-full object-cover">
+        <img src="https://i.ibb.co/20QqJKX2/logo.jpg" alt="Logo Proyectos Técnicos 2008" class="w-full h-full object-cover">
       </div>
 
-      <header class="text-center mb-10">
+      <header class="text-center mb-6">
         <h1 class="font-bold">
           <span class="inline-block bg-orange-600/90 border border-orange-400/50 rounded-full px-6 py-2 text-sm md:text-base shadow-xl backdrop-blur-md uppercase tracking-tight">
             PROYECTOS TÉCNICOS 2008
           </span>
         </h1>
-        <p class="text-white/70 text-sm mt-4 italic font-light text-center">Ingeniería y confianza en movimiento.</p>
+        <p class="text-white/70 text-sm mt-4 italic font-light">Ingeniería y confianza en movimiento.</p>
       </header>
 
+      <section class="glass-card w-full rounded-2xl p-4 mb-6 text-center">
+        <h2 class="text-[10px] tracking-[0.2em] uppercase opacity-60 mb-3">¿Por qué elegirnos?</h2>
+        <div class="grid grid-cols-3 gap-2">
+          <div class="flex flex-col items-center">
+            <span class="text-orange-500 text-lg mb-1" aria-hidden="true">🛡️</span>
+            <p class="text-[9px] font-bold uppercase leading-tight">Certificación SENCAMER</p>
+          </div>
+          <div class="flex flex-col items-center border-x border-white/10">
+            <span class="text-orange-500 text-lg mb-1" aria-hidden="true">⚡</span>
+            <p class="text-[9px] font-bold uppercase leading-tight">Atención Multimarca</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-orange-500 text-lg mb-1" aria-hidden="true">🎁</span>
+            <p class="text-[9px] font-bold uppercase leading-tight">1ra Visita Gratis</p>
+          </div>
+        </div>
+      </section>
+
       <nav class="w-full space-y-4 mb-8">
-        <a href="https://w.app/f8ribs" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
+        <a href="https://wa.link/f1x0l4" target="_blank" rel="noopener" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
           <span>🏢</span> SOLICITAR COTIZACIÓN
         </a>
         
-        <a href="https://www.instagram.com/ascensoresproyectostecnicos" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
+        <a href="https://www.instagram.com/ascensoresproyectostecnicos" target="_blank" rel="noopener" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
           <span>📸</span> INSTAGRAM
         </a>
         
-        <a href="https://wa.me/584241513726?text=Hola,%20deseo%20ver%20fotos%20de%20sus%20trabajos" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
+        <a href="https://wa.me/584241513726?text=Hola,%20deseo%20ver%20fotos%20de%20sus%20trabajos" target="_blank" rel="noopener" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold">
           <span>⭐</span> NUESTROS TRABAJOS
         </a>
       </nav>
@@ -127,13 +158,14 @@
       <section class="glass-card w-full rounded-2xl p-6 mb-8">
         <h2 class="text-center mb-4 tracking-[0.2em] text-[10px] uppercase border-b border-white/10 pb-2 opacity-60">Servicios Especializados</h2>
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center gap-3"><span class="text-orange-500">✔</span> Mantenimiento Preventivo</li>
-          <li class="flex items-center gap-3"><span class="text-orange-500">✔</span> Reparaciones Correctivas</li>
-          <li class="flex items-center gap-3"><span class="text-orange-500">✔</span> Modernización de Equipos</li>
+          <li class="flex items-start gap-3"><span class="text-orange-500">✔</span> <div><strong>Mantenimiento Integral:</strong> Preventivo y correctivo con rutinas programadas.</div></li>
+          <li class="flex items-start gap-3"><span class="text-orange-500">✔</span> <div><strong>Fabricación e Instalación:</strong> Sistemas de elevación a la medida.</div></li>
+          <li class="flex items-start gap-3"><span class="text-orange-500">✔</span> <div><strong>Modernización y Estética:</strong> Restauración tecnológica de cabinas.</div></li>
+          <li class="flex items-start gap-3"><span class="text-orange-500">✔</span> <div><strong>Ingeniería Especializada:</strong> Técnicos avalados con amplia experiencia.</div></li>
         </ul>
       </section>
 
-      <a href="https://w.app/snvlf6" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold mb-12">
+      <a href="https://wa.link/ysg3bt" target="_blank" rel="noopener" class="link-button flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold mb-12">
         <span>💬</span> CONTACTAR SOPORTE
       </a>
 
@@ -143,11 +175,11 @@
     </div>
   </main>
 
-  <a href="https://w.app/aeqzbg" 
+  <a href="https://wa.link/zlzedr" 
      target="_blank" 
-     rel="noopener noreferrer"
+     rel="noopener"
      class="fixed bottom-6 right-6 w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50 hover:scale-110 transition-transform"
-     aria-label="Reportar Falla">
+     aria-label="Emergencias">
     <div class="pulse-ring"></div>
     <span class="relative z-10">🔧</span>
   </a>
